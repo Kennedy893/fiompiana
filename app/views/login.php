@@ -10,7 +10,7 @@
     
     <div class="login-container">
         <form action="liste_crud.html" class="login-form">
-            <h2>Admin Panel</h2>
+            <h2>Gestion d'Elevage</h2>
             <p>
                 <label for="nom">Nom d'utilisateur</label>
                 <input type="text" name="nom" id="nom" placeholder="Entrez votre nom" required >
