@@ -1,11 +1,13 @@
 <?php
 
+// KENNEDY
+
 namespace app\models;
 
 use Flight;
 use PDO;
 
-class ProductModel {
+class AnimauxModel {
 
     private $db;
 

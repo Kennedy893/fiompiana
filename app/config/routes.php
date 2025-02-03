@@ -1,23 +1,20 @@
 <?php
 
-use app\controllers\K_AnimauxController;
+use app\controllers\FrontOfficeController;
 use flight\Engine;
 use flight\net\Router;
 //use Flight;
 
-/** 
- * @var Router $router 
- * @var Engine $app
- */
 
 $router->get('/', function () use ($router) {
         Flight::render('accueil');
     });
 
-$router->group('/accueil', function () use ($router) {
-    $router->get('/achat-animaux', function () {
-        Flight::render('achat-animaux');
-    });
+$FrontOfficeController = new FrontOfficeController();
+
+$router->group('/accueil', function () use ($router, $FrontOfficeController) {
+
+    $router->get('/achat-animaux', [$FrontOfficeController, 'listeAnimauxAVendre']);
 
     $router->get('/vente-animaux', function () {
         Flight::redirect('vente-animaux');
