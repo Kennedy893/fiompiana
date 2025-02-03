@@ -55,3 +55,10 @@ CREATE TABLE elevage_nourrir
     id_eleveur INTEGER,
     date_nourrir DATE
 );
+
+CREATE TABLE elevage_image_animal
+(
+    id_image INTEGER PRIMARY KEY AUTO_INCREMENT,
+    id_animal INTEGER,
+    url_image VARCHAR(200)
+)
