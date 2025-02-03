@@ -13,7 +13,7 @@
                 <a href="index.html" class="logo">Elevage</a>
                 <ul class="menu">
                     <li><a href="#">Reset</a></li>
-                    <li><a href="/accueil/achat-animaux">Achat animaux</a></li>
+                    <li><a href="<?php echo constant('BASE_URL')?>accueil/achat-animaux">Achat animaux</a></li>
                     <li><a href="/accueil/vente-animaux">Vente animaux</a></li>
                     <li><a href="/accueil/achat-alimentation">Achat alimentation</a></li>
                     <li><a href="/accueil/prevision">Prevision</a></li>
