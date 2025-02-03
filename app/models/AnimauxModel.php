@@ -24,4 +24,10 @@ class AnimauxModel {
         return $result;
     }
 
+    public function setEleveur($id_eleveur, $id_animal)
+    {
+        $stmt = $this->db->prepare("UPDATE elevage_animal SET id_eleveur = ? WHERE id_animal = ?");
+        $stmt->execute([$id_eleveur, $id_animal]);
+    }
+
 }
