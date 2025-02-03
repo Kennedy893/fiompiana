@@ -7,6 +7,7 @@ CREATE TABLE elevage_alimentation
     prix_kg NUMBER(10,2),
     gain NUMBER(10,2)
 );
+ALTER TABLE elevage_alimentation ADD COLUMN nom_alimentation VARCHAR(30);
 
 CREATE TABLE elevage_type_animal
 (
