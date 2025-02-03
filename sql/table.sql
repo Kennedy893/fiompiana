@@ -38,7 +38,7 @@ CREATE TABLE elevage_eleveur
     id_eleveur INTEGER PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(100),
     mot_de_passe VARCHAR(100),
-    capital NUMBER(16,2),
+    capital NUMBER(16,2)
 );
 
 CREATE TABLE elevage_stockage
@@ -61,4 +61,4 @@ CREATE TABLE elevage_image_animal
     id_image INTEGER PRIMARY KEY AUTO_INCREMENT,
     id_animal INTEGER,
     url_image VARCHAR(200)
-)
+);
