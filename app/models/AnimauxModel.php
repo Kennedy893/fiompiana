@@ -30,4 +30,20 @@ class AnimauxModel {
         $stmt->execute([$id_eleveur, $id_animal]);
     }
 
+    public function getPrixExactAnimal($id_animal)
+    {
+        $stmt = $this->db->prepare("SELECT a.poids_actuel * t.prix_kg as prix_exact FROM elevage_type_animal as t 
+                                    JOIN elevage_animal as a ON t.id_type=a.id_type 
+                                    WHERE a.id_animal = $id_animal");
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['prix_exact'];
+    }
+
+    public function updateCapital($id_animal)
+    {
+        $prix = $this->getPrixExactAnimal($id_animal);
+        
+    }
+
 }
