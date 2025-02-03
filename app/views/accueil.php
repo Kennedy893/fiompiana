@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elevage</title>
-    <link rel="stylesheet" href="<?php echo constant('BASE_URL')?>public/assets/css/styles.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/styles.css">
 </head>
 <body>
     <header>
@@ -18,6 +18,11 @@
                     <li><a href="/accueil/achat-alimentation">Achat alimentation</a></li>
                     <li><a href="/accueil/prevision">Prevision</a></li>
                     <li><a href="/accueil/parametre-type">Parametre type animal</a></li>
+                    <li><a href="<?= BASE_URL ?>accueil/achat-animaux">Achat animaux</a></li>
+                    <li><a href="<?= BASE_URL ?>accueil/vente-animaux">Vente animaux</a></li>
+                    <li><a href="<?= BASE_URL ?>accueil/achat-alimentation">Achat alimentation</a></li>
+                    <li><a href="<?= BASE_URL ?>accueil/prevision">Prevision</a></li>
+                    <li><a href="<?= BASE_URL ?>accueil/parametre-type">Parametre type animal</a></li>
                 </ul>
             </nav>
         </div>
