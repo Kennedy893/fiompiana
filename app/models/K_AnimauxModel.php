@@ -22,5 +22,4 @@ class ProductModel {
         return $result;
     }
 
-    
 }
