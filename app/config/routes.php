@@ -2,6 +2,7 @@
 
 use app\controllers\FrontOfficeController;
 use app\controllers\ParametrageController;
+use app\controllers\ResetController;
 
 use flight\Engine;
 use flight\net\Router;
@@ -41,6 +42,8 @@ $router->group('/accueil', function () use ($router, $FrontOfficeController) {
     $router->get('/parametre-type', function () {
         Flight::redirect('parametre-type');
     });
+
+    $router->post('/reset', [new ResetController(), 'reset']);
 });
 
 $Param_Controller=new ParametrageController();
@@ -48,3 +51,4 @@ $router->get('/type_animal', [ $Param_Controller, 'go_to_animal' ]);
 $router->get('/type_animal/delete', [ $Param_Controller, 'delete_type_animal' ]);
 $router->get('/type_alimentation', [ $Param_Controller, 'go_to_alimentation' ]);
 $router->get('/type_alimentation/delete', [ $Param_Controller, 'delete_type_alimentation' ]);
+
