@@ -2,7 +2,7 @@
 
     namespace app\models;
     
-    class Alimentation_H
+    class HAlimentation
     {
         private $id_alimentation;
         private $prix_kg;
@@ -25,7 +25,7 @@
         }
     
         // Setter pour id_alimentation
-        public function setAlimentation($id_alimentation) 
+        public function setIdAlimentation($id_alimentation) 
         {
             $this->id_alimentation = $id_alimentation;
         }
@@ -71,11 +71,11 @@
     
         public static function get_all()
         {
-            $values=Request_backoffice::get_all("eleve_alimentation");
+            $values=RequestbackofficeH::get_all("eleve_alimentation");
             $retour=array();
             foreach($donnee as $values)
             {
-                $rep=new Alimentation_H($donnee['id_alimentation'],$donnee['prix_kg'],$donnee['gain'],$donnee['nom_alimentation']);
+                $rep=new HAlimentation($donnee['id_alimentation'],$donnee['prix_kg'],$donnee['gain'],$donnee['nom_alimentation']);
                 $retour[]=$rep;
             }
             return $retour;
@@ -83,11 +83,12 @@
 
         public static function get_by_id($id)
         {
-            $values=Request_backoffice::get_by_nbr("elevage_alimentation","id_alimentation",$id);
-            $rep=new Alimentation_H($values[0]['id_alimentation'],$values[0]['prix_kg'],$values[0]['gain'],$values[0]['nom_alimentation']);
+            $values=RequestbackofficeH::get_by_nbr("elevage_alimentation","id_alimentation",$id);
+            $rep=new HAlimentation($values['id_alimentation'],$values['prix_kg'],$values['gain'],$values['nom_alimentation']);
 
             return $rep;
         }
+
     }
     
     

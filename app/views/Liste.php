@@ -1,6 +1,4 @@
-<?php
-    print_r($data);
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,11 +27,15 @@
                 <?php
                 if(isset($data['elevage_type_animal']))
                 {
+                ?>
 
+                <?php
                 }
                 if(isset($data['elevage_alimentation']))
                 {
-                    
+                ?>
+                
+                <?php
                 }
                 ?>
                 <tr>
