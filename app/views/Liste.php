@@ -73,7 +73,7 @@
                         <td><?php echo $donnee->getConsoJrs(); ?></td>
                         <td class="card-buttons">
                             <a href=""><button class="button edit-button">Modifier</button></a>
-                            <a href=""><button class="button delete-button">Supprimer</button></a>
+                            <a href="type_animal/delete?id=<?=$donnee->getIdType() ?>"><button class="button delete-button">Supprimer</button></a>
                         </td>
                     </tr>
                 <?php
@@ -120,6 +120,7 @@
         </table>
 
         <!-- Pagination -->
+        <!--
         <div class="pagination">
             <a href="#" class="page-link">&laquo;</a>
             <a href="#" class="page-link active">1</a>
@@ -127,6 +128,7 @@
             <a href="#" class="page-link">3</a>
             <a href="#" class="page-link">&raquo;</a>
         </div>
+        -->
         <div class="add-product">
             <a href="formulaire.html"><button class="button add-product-button">+</button></a>
         </div>
