@@ -94,7 +94,7 @@
         $newval->getPrix_kg().
         ", nom_alimentation='".$newval->getNom().
         "', gain=".$newval->getGain().
-        ", WHERE id_alimentation=".$id;
+        " WHERE id_alimentation=".$id;
 
         $db=Flight::db();
         $sql=$db->prepare($request);

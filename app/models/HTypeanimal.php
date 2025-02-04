@@ -170,7 +170,7 @@ class HTypeanimal
         ", nbr_jrs_dead=".$newval->getNbrJrsDead().
         ", perte_sans_manger=".$newval->getPerteSansManger().
         ", conso_jrs=".$newval->getConsoJrs().
-        ", WHERE id_type=".$id;
+        " WHERE id_type=".$id;
 
         $db=Flight::db();
         $sql=$db->prepare($request);

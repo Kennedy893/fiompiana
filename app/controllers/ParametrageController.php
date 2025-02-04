@@ -54,5 +54,61 @@
             $data=['action'=>"elevage_alimentation",'valeur'=>$valeur];
             Flight::render('form_modif',$data);
         }
+        
+        public function update_type_animal()
+        {
+            // Récupération des données du formulaire
+            $data = Flight::request()->data;
+
+            $id_type =Flight::request()->query['id']; // Id toujours fixé à 3
+            $id_alimentation = $data->alimentation;
+            $nom_type = $data->nom;
+            $poids_min = $data->min;
+            $poids_max = $data->max;
+            $prix_kg = $data->prix_kg;
+            $nbr_jrs_dead = $data->resist;
+            $perte_sans_manger = $data->perte;
+            $conso_jrs = $data->conso;
+
+            // Création de l'objet HTypeanimal
+            $newTypeAnimal = new HTypeanimal(
+                $id_type,
+                $id_alimentation,
+                $nom_type,
+                $poids_min,
+                $poids_max,
+                $prix_kg,
+                $nbr_jrs_dead,
+                $perte_sans_manger,
+                $conso_jrs
+            );
+
+            HTypeanimal::update($id_type, $newTypeAnimal);
+            Flight::redirect(BASE_URL.'type_animal');
+
+        }
+
+        public function update_alimentation()
+        {
+            // Récupération des données du formulaire
+            $data = Flight::request()->data;
+
+            $id_alimentation = Flight::request()->query['id']; // Supposition que l'ID reste fixe à 3
+            $nom_alimentation = $data->nom;
+            $prix_kg = $data->prix_kg;
+            $gain = $data->gain;
+
+            // Création de l'objet HAlimentation
+            $newAlimentation = new HAlimentation(
+                $id_alimentation,
+                $prix_kg,
+                $gain,
+                $nom_alimentation
+            );
+
+            // Mise à jour en base de données
+            HAlimentation::update($id_alimentation, $newAlimentation);
+            Flight::redirect(BASE_URL.'type_alimentation');
+        }
     }
 ?>
