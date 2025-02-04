@@ -123,13 +123,20 @@ class AnimauxModel {
 
 
 
-    // public function getAnimauxVendables($id_eleveur)
-    // {
-    //     $stmt = $this->db->prepare("SELECT * FROM elevage_animal WHERE status_vente is TRUE AND id_eleveur = $id_eleveur");
-    //     $stmt->execute();
-    //     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //     return $result;
-    // }
+    public function getAnimauxVendables($id_eleveur)
+    {
+        $stmt = $this->db->prepare("
+            SELECT a.* 
+            FROM elevage_animal a
+            JOIN elevage_type_animal t ON a.id_type = t.id_type
+            WHERE a.status_vente = TRUE 
+            AND a.id_eleveur = ? 
+            AND a.poids_actuel BETWEEN t.poids_min_vente AND t.poids_max_vente
+        ");
+        
+        $stmt->execute([$id_eleveur]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
 }
