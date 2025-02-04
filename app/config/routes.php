@@ -1,6 +1,8 @@
 <?php
 
 use app\controllers\FrontOfficeController;
+use app\controllers\ParametrageController_H;
+
 use flight\Engine;
 use flight\net\Router;
 //use Flight;
@@ -32,3 +34,7 @@ $router->group('/accueil', function () use ($router, $FrontOfficeController) {
         Flight::redirect('parametre-type');
     });
 });
+
+$Param_Controller=new ParametrageController_H();
+$router->get('/type_animal', [ $Param_Controller, 'go_to_animal' ]);
+$router->get('/type_alimentation', [ $Param_Controller, 'go_to_alimentation' ]);

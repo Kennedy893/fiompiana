@@ -1,0 +1,242 @@
+/* Style général */
+body {
+    background: #f4f1e0; /* Beige doux, couleur inspirée de la terre */
+    color: #4b3621; /* Brun profond pour un contraste naturel */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2a5934; /* Vert sombre rappelant les champs */
+}
+
+.products-container {
+    margin-top: 160px; /* Hauteur suffisante pour éviter la superposition */
+}
+
+/* Tableau de produits */
+.products-table {
+    margin-left: 20vw;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.products-table th, .products-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.products-table th {
+    background-color: #8b5e3b; /* Brun chaleureux */
+    color: white;
+}
+
+.products-table tr:nth-child(even) {
+    background-color: #d9cbb6; /* Beige clair */
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Boutons */
+.button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 5px;
+    transition: background 0.3s;
+}
+
+.edit-button {
+    background-color: #4caf50; /* Vert doux */
+}
+
+.edit-button:hover {
+    background-color: #388e3c;
+}
+
+.delete-button {
+    background-color: #ff7043; /* Orange rappelant la terre */
+}
+
+.delete-button:hover {
+    background-color: #d84315;
+}
+
+.add-button {
+    background-color: #2a5934; /* Vert sombre */
+}
+
+.add-button:hover {
+    background-color: #1e3e24;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.page-link {
+    background-color: #8b5e3b; /* Brun chaleureux */
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+.page-link.active {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    margin-top: 80px;
+    width: 200px;
+    background-color: #8b5e3b;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+    color: #ffffff;
+    background: #4caf50;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: fixed;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+}
+
+/* Barre de recherche */
+.search {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #8b5e3b;
+    border-radius: 5px;
+    width: 90vw;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+}
+
+.search form {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.searchTerm {
+    flex-grow: 1;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.searchTerm::placeholder {
+    color: #aaa;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #388e3c;
+}
+
+/* Compense la hauteur de la barre de recherche */
+.add-product {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.add-product-button {
+    background-color: #388e3c;
+    color: white;
+    padding: 12px 20px;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-product-button:hover {
+    color: #388e3c;
+    background-color: white;
+}
