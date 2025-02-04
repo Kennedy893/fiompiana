@@ -38,5 +38,12 @@
 
             Flight::redirect(BASE_URL.'type_animal');
         }
+        public function redirect_modif_type_animal()
+        {
+            $id=Flight::request()->query['id'];
+            $valeur=HTypeanimal::get_by_id($id);
+            $data=['action'=>"type_animal",'valeur'=>$valeur];
+            Flight::render('Form_modif',$data);
+        }
     }
 ?>
