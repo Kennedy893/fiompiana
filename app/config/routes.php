@@ -18,7 +18,13 @@ $router->group('/accueil', function () use ($router, $FrontOfficeController) {
 
     $router->get('/achat-animaux', [$FrontOfficeController, 'listeAnimauxAVendre']);
 
-    $router->post('/acheter/@id_animal:[0-9]+/@id_eleveur:[0-9]+', [$FrontOfficeController, 'faireAchat']);
+    $router->get('/acheter/@id_animal:[0-9]+/@id_eleveur:[0-9]+', [$FrontOfficeController, 'faireAchat']);
+
+    // $router->get('/accueil/acheter', function () use ($FrontOfficeController) {
+    //     $id_animal = Flight::request()->query->id_animal;
+    //     $id_eleveur = Flight::request()->query->id_eleveur;
+    //     $FrontOfficeController->faireAchat($id_animal, $id_eleveur);
+    // });
 
     $router->get('/vente-animaux', function () {
         Flight::redirect('vente-animaux');

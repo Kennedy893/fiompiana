@@ -23,8 +23,7 @@ class FrontOfficeController {
 
     public function faireAchat($id_animal, $id_eleveur)
     {
-        // $id_eleveur = Flight::request()->data->id_eleveur;
-        // $id_animal = Flight::request()->data->id_animal;
+        // $autovente = Flight::request()->query->autovente ? 1 : 0; // Convertir en booléen
 
         $animal = Flight::AnimauxModel()->getAnimalById($id_animal);
 
@@ -36,10 +35,13 @@ class FrontOfficeController {
             return;
         }
 
-        $setEleveur = Flight::AnimauxModel()->setEleveur($id_eleveur, $id_animal);
+        Flight::AnimauxModel()->setEleveur(1, $id_animal);
+        Flight::AnimauxModel()->removeFromVente($id_animal);
         $updateCapital = Flight::AnimauxModel()->updateCapital($id_animal, $id_eleveur);
 
-        // Flight::redirect('/confirmation-achat');
+        $animaux = Flight::AnimauxModel()->getAnimauxAVendre(1);
+        $result = ['animaux' => $animaux];
+        Flight::render('achat-animaux', $result);
     }
 
 }
