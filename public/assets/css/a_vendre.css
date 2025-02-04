@@ -3,12 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 /* Style du corps */
 body {
-    background-color: #f8f9fa;
+    background-color: #F4EFE6; /* Beige clair pour une ambiance champêtre */
+    color: #333;
     text-align: center;
     padding: 20px;
 }
@@ -16,8 +17,9 @@ body {
 /* Titre principal */
 h1 {
     margin-bottom: 20px;
-    font-size: 28px;
-    color: #333;
+    font-size: 32px;
+    color: #5A3E1B; /* Marron foncé pour rappeler la terre */
+    font-weight: bold;
 }
 
 /* Conteneur des cartes */
@@ -31,45 +33,56 @@ h1 {
 
 /* Carte d'animal */
 .animal-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: #FFF8E7; /* Fond doux couleur crème */
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
     padding: 15px;
-    width: 250px;
+    width: 280px;
     text-align: center;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    border: 2px solid #D2B48C; /* Brun clair */
 }
 
 .animal-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Image des animaux */
 .animal-card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 12px;
+    border: 2px solid #A0522D; /* Brun foncé */
 }
 
 /* Nom de l'animal */
 .animal-card h2 {
-    font-size: 20px;
-    margin: 10px 0;
-    color: #444;
+    font-size: 22px;
+    margin: 12px 0;
+    color: #4E342E; /* Brun foncé */
+}
+
+/* Poids */
+.animal-card p {
+    font-size: 16px;
+    color: #6B4226; /* Brun terre */
+    font-weight: bold;
 }
 
 /* Bouton d'achat */
 .buy-button {
-    background-color: #c96d3b;
+    background-color: #6B8E23; /* Vert olive */
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 18px;
     cursor: pointer;
     font-size: 16px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s;
 }
 
 .buy-button:hover {
-    background-color:chocolate;
+    background-color: #556B2F; /* Vert forêt */
+    transform: scale(1.05);
 }
