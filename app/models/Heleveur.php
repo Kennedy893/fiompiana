@@ -54,7 +54,7 @@ class HEleveur
     // Setter pour mot_de_passe
     public function setMotDePasse($mot_de_passe) 
     {
-        $this->mot_de_passe = password_hash($mot_de_passe, PASSWORD_DEFAULT);
+        $this->mot_de_passe = $mot_de_passe;
     }
 
     // Getter pour capital
@@ -88,20 +88,10 @@ class HEleveur
 
     public static function get_verification($nom,$pass)
     {
-        $valeur=Heleveur::get_all();
-        for($i=0 ; $i<Count($valeur) ; $i++)
-        {
-            if
-            (
-                $valeur[$i]->getNom()==$nom &&
-                $valeur[$i]-->getMotDePasse()==$pass
-            )
-            {
-                $retour=$valeur[$i];
-                return $retour;
-            }
-        }
-        return null;
+        $colonne=['nom','mot_de_passe'];
+        $valeur=[$nom,$pass];
+        $rep=RequestbackofficeH::get_by_colonnes_unique("elevage_eleveur",$colonne, $valeur);
+        return $rep;
     }
     // Récupérer un éleveur par son ID
     public static function get_by_id($id)

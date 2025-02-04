@@ -61,6 +61,26 @@ class RequestbackofficeH
         return $retour;
     }
 
+    public static function get_by_colonnes_unique($table_name,$colonne,$valeur)
+    {
+        $db=Flight::db();
+        $request="SELECT *";
+
+        $string_sql=$request." FROM ".$table_name." WHERE 1=1";
+
+        if(count($colonne)!=0)
+        {
+            for($i=0 ; $i<count($colonne) ; $i++)
+            {
+                $string_sql=$string_sql." AND ".$colonne[$i]." LIKE '".$valeur[$i]."'";
+            }
+        }
+        $sql=$db->prepare($string_sql);
+        $sql->execute();
+        $retour=$sql->fetch(PDO::FETCH_ASSOC);
+        return $retour;
+    }
+
     public static function update_table($table_name,$colonne,$valeur,$col_condition,$valeur_condition)
     {
         $db=Flight::db();

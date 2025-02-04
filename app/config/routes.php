@@ -15,6 +15,7 @@ use flight\net\Router;
 
 $Login=new LoginController();
 $router->get('/', [ $Login, 'home' ]);
+$router->post('/verify_login',[$Login, 'login']);
 
 $FrontOfficeController = new FrontOfficeController();
 
@@ -53,27 +54,5 @@ $router->get('/type_alimentation', [ $Param_Controller, 'go_to_alimentation' ]);
 $router->get('/type_alimentation/modif', [ $Param_Controller, 'redirect_modif_alimentation' ]);
 $router->post('/type_alimentation/modif/confirm', [ $Param_Controller, 'update_alimentation' ]);
 
-$argent = new ArgentController();
-$alimentation = new AlimentationController();
 
-
-$router->get('/',[$argent, 'showMontant']);
-$router->post('/depotArgent',[$argent, 'depotArgent']);
-$router->get('/depotArgent',[$argent, 'afficherFormulaire']);
-$router->get('/listAlimentation',[$alimentation, 'listAlimentations']);
-$router->get('/achatAlimentationFormulaire',[$alimentation, 'afficherFormulaireAchat']);
-$router->post('/alimentationAcheter',[$alimentation, 'validerAchat']);
-$router->get('/alimentationAcheter',[$alimentation, 'afficherAchats']);
-
-$argent = new ArgentController();
-$alimentation = new AlimentationController();
-
-
-$router->get('/',[$argent, 'showMontant']);
-$router->post('/depotArgent',[$argent, 'depotArgent']);
-$router->get('/depotArgent',[$argent, 'afficherFormulaire']);
-$router->get('/listAlimentation',[$alimentation, 'listAlimentations']);
-$router->get('/achatAlimentationFormulaire',[$alimentation, 'afficherFormulaireAchat']);
-$router->post('/alimentationAcheter',[$alimentation, 'validerAchat']);
-$router->get('/alimentationAcheter',[$alimentation, 'afficherAchats']);
 
