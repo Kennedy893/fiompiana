@@ -42,7 +42,15 @@
         {
             $id=Flight::request()->query['id'];
             $valeur=HTypeanimal::get_by_id($id);
-            $data=['action'=>"type_animal",'valeur'=>$valeur];
+            $data=['action'=>"elevage_type_animal",'valeur'=>$valeur];
+            Flight::render('Form_modif',$data);
+        }
+
+        public function redirect_modif_alimentation()
+        {
+            $id=Flight::request()->query['id'];
+            $valeur=HAlimentation::get_by_id($id);
+            $data=['action'=>"elevage_alimentation",'valeur'=>$valeur];
             Flight::render('Form_modif',$data);
         }
     }
