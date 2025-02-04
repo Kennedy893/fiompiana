@@ -3,15 +3,10 @@
 use app\controllers\FrontOfficeController;
 use app\controllers\ParametrageController;
 use app\controllers\ResetController;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 use app\controllers\LoginController;
-=======
 use app\controllers\AlimentationController;
->>>>>>> Stashed changes
-=======
-use app\controllers\AlimentationController;
->>>>>>> Stashed changes
+use app\controllers\AlrgentController;
+
 
 use flight\Engine;
 use flight\net\Router;
