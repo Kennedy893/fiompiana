@@ -73,7 +73,6 @@
                         <td><?php echo $donnee->getConsoJrs(); ?></td>
                         <td class="card-buttons">
                             <a href=""><button class="button edit-button">Modifier</button></a>
-                            <a href="type_animal/delete?id=<?=$donnee->getIdType() ?>"><button class="button delete-button">Supprimer</button></a>
                         </td>
                     </tr>
                 <?php
@@ -108,7 +107,7 @@
                         <td><?php echo $donnee->getGain(); ?></td>
                         <td class="card-buttons">
                             <a href=""><button class="button edit-button">Modifier</button></a>
-                            <a href=""><button class="button delete-button">Supprimer</button></a>
+                            
                             <!--<button class="button add-button">Ajouter</button>-->
                         </td>
                     </tr>
@@ -129,9 +128,9 @@
             <a href="#" class="page-link">&raquo;</a>
         </div>
         -->
-        <div class="add-product">
+        <!--<div class="add-product">
             <a href="formulaire.html"><button class="button add-product-button">+</button></a>
-        </div>
+        </div>-->
     </div>
 </body>
 </html>

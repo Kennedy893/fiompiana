@@ -38,10 +38,5 @@
 
             Flight::redirect(BASE_URL.'type_animal');
         }
-        public function delete_alimentation()
-        {
-            $id=Flight::request()->query['id'];
-            
-        }
     }
 ?>
