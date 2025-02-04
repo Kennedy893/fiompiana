@@ -5,7 +5,7 @@ use app\controllers\ParametrageController;
 use app\controllers\ResetController;
 use app\controllers\LoginController;
 use app\controllers\AlimentationController;
-use app\controllers\AlrgentController;
+use app\controllers\ArgentController;
 
 
 use flight\Engine;
