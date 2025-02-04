@@ -74,7 +74,6 @@
                         <td class="card-buttons">
                             <button class="button edit-button">Modifier</button>
                             <button class="button delete-button">Supprimer</button>
-                            <button class="button add-button">Ajouter</button>
                         </td>
                     </tr>
                 <?php
@@ -110,7 +109,7 @@
                         <td class="card-buttons">
                             <button class="button edit-button">Modifier</button>
                             <button class="button delete-button">Supprimer</button>
-                            <button class="button add-button">Ajouter</button>
+                            <!--<button class="button add-button">Ajouter</button>-->
                         </td>
                     </tr>
                 <?php
