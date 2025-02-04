@@ -7,19 +7,19 @@
 }
 
 body {
-    background: #121212;
+    background: #f4f1e0; /* Beige doux */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #e0e0e0;
+    color: #4b3621; /* Brun profond */
 }
 
 .login-container {
-    background-color: #1e1e2f;
+    background-color: #d9cbb6; /* Beige clair */
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     width: 100%;
     max-width: 400px;
 }
@@ -27,9 +27,9 @@ body {
 .login-form h2 {
     text-align: center;
     margin-bottom: 24px;
-    color: #ffffff;
+    color: #2a5934; /* Vert sombre */
     font-size: 24px;
-    border-bottom: 2px solid #00adb5;
+    border-bottom: 2px solid #8b5e3b;
     padding-bottom: 8px;
 }
 
@@ -40,28 +40,28 @@ body {
 .login-form label {
     display: block;
     margin-bottom: 6px;
-    color: #c4c4c4;
+    color: #4b3621;
 }
 
 .login-form input[type="text"],
 .login-form input[type="password"] {
     width: 100%;
     padding: 12px;
-    border: 1px solid #2b2b38;
+    border: 1px solid #8b5e3b;
     border-radius: 6px;
-    background: #2b2b38;
-    color: #ffffff;
+    background: #f4f1e0;
+    color: #4b3621;
     font-size: 14px;
 }
 
 .login-form input::placeholder {
-    color: #a1a1b5;
+    color: #8b5e3b;
 }
 
 .login-form .submit-button {
     width: 100%;
     padding: 12px;
-    background-color: #00adb5;
+    background-color: #4caf50;
     border: none;
     border-radius: 6px;
     color: white;
@@ -71,18 +71,16 @@ body {
 }
 
 .login-form .submit-button:hover {
-    background-color: #007f89;
+    background-color: #388e3c;
 }
 
-/* Ajoutez ceci pour styliser le message d'erreur */
+/* Message d'erreur */
 .error-message {
-    background-color: #ff4d4d;
+    background-color: #ff7043;
     color: white;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
     margin-top: 15px;
     font-size: 14px;
-    /*display: none; /* Caché par défaut */
 }
-
