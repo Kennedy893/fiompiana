@@ -8,6 +8,17 @@ CREATE TABLE elevage_alimentation
     gain DECIMAL(10,2)
 );
 ALTER TABLE elevage_alimentation ADD COLUMN nom_alimentation VARCHAR(30);
+ALTER TABLE elevage_alimentatioe ADD COLUMN image_alimentation VARCHAR(30);
+
+CREATE TABLE elevage_achat_alimentation
+(
+    id_achat INT(11) NOT NULL PRIMARY KEY AUTO_Increment,
+    id_alimentation INT(11) NOT NULL,
+    date_achat DATE,
+    quantite INT(11) NOT NULL,
+    FOREIGN KEY (id_alimentation) REFERENCES elevage_alimentation(id_alimentation)
+); 
+
 
 CREATE TABLE elevage_type_animal
 (
@@ -71,3 +82,9 @@ CREATE TABLE elevage_image_animal
     url_image VARCHAR(200),
     FOREIGN KEY (id_animal) REFERENCES elevage_animal(id_animal)
 );
+
+
+-- CREATE TABLE elevage_capital (
+--     id_capital INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+--     valeur INT(11) NOT NULL
+-- );
