@@ -72,7 +72,7 @@
                         <td><?php echo $donnee->getPerteSansManger(); ?></td>
                         <td><?php echo $donnee->getConsoJrs(); ?></td>
                         <td class="card-buttons">
-                            <a href="<?=BASE_URL ?>.type_animal/modif?id=<?=$donnee->getIdType(); ?>"><button class="button edit-button">Modifier</button></a>
+                            <a href="<?=BASE_URL ?>type_animal/modif?id=<?=$donnee->getIdType(); ?>"><button class="button edit-button">Modifier</button></a>
                         </td>
                     </tr>
                 <?php
@@ -106,7 +106,7 @@
                         <td><?php echo $donnee->getPrix_kg(); ?></td>
                         <td><?php echo $donnee->getGain(); ?></td>
                         <td class="card-buttons">
-                            <a href="<?=BASE_URL ?>.type_alimentation/modif?id=<?=$donnee->getIdAlimentation(); ?>"><button class="button edit-button">Modifier</button></a>
+                            <a href="<?=BASE_URL ?>type_alimentation/modif?id=<?=$donnee->getIdAlimentation(); ?>"><button class="button edit-button">Modifier</button></a>
                             
                             <!--<button class="button add-button">Ajouter</button>-->
                         </td>

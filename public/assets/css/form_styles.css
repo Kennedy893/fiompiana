@@ -6,121 +6,76 @@ body {
     padding: 20px;
 }
 
+/* Titre de la page */
 h1 {
     text-align: center;
     margin-bottom: 30px;
     color: #2a5934; /* Vert sombre rappelant les champs */
 }
 
-.products-container {
-    margin-top: 160px; /* Hauteur suffisante pour éviter la superposition */
-}
-
-/* Tableau de produits */
-.products-table {
+/* Formulaire */
+.form-container {
+    margin-top: 160px;
+    width: 60vw;
     margin-left: 20vw;
-    border-collapse: collapse;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.products-table th, .products-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-.products-table th {
-    background-color: #8b5e3b; /* Brun chaleureux */
-    color: white;
-}
-
-.products-table tr:nth-child(even) {
     background-color: #d9cbb6; /* Beige clair */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
-.card-buttons {
-    display: flex;
-    justify-content: space-around;
+.form-group {
+    margin-bottom: 20px;
 }
 
-/* Boutons */
-.button {
-    padding: 8px 12px;
+label {
+    display: block;
+    color: #4b3621; /* Brun profond */
+    margin-bottom: 5px;
+}
+
+input[type="text"], select, input[type="number"]{
+    width: 100%;
+    padding: 10px;
+    background-color: #f4f1e0; /* Beige doux */
     border: none;
     border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    margin: 0 5px;
-    transition: background 0.3s;
+    color: #4b3621;
+    font-size: 16px;
+    outline: none;
 }
 
-.edit-button {
+
+
+button[type="submit"] {
     background-color: #4caf50; /* Vert doux */
-}
-
-.edit-button:hover {
-    background-color: #388e3c;
-}
-
-.delete-button {
-    background-color: #ff7043; /* Orange rappelant la terre */
-}
-
-.delete-button:hover {
-    background-color: #d84315;
-}
-
-.add-button {
-    background-color: #2a5934; /* Vert sombre */
-}
-
-.add-button:hover {
-    background-color: #1e3e24;
-}
-
-/* Pagination */
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
-}
-
-.page-link {
-    background-color: #8b5e3b; /* Brun chaleureux */
     color: white;
-    padding: 10px 15px;
-    margin: 0 5px;
-    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
     border-radius: 5px;
-    font-size: 14px;
-    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
 }
 
-.page-link:hover {
-    background-color: #4caf50;
-    color: white;
+button[type="submit"]:hover {
+    background-color: #388e3c; /* Vert foncé */
 }
 
-.page-link.active {
-    background-color: #4caf50;
-    color: white;
-    font-weight: bold;
-    pointer-events: none;
-}
-
+/* Sidebar */
 .sidebar {
     margin: 0;
     padding: 0;
     margin-top: 80px;
     width: 200px;
-    background-color: #8b5e3b;
+    background-color: #8b5e3b; /* Brun chaleureux */
     position: fixed;
     height: 100%;
     overflow: auto;
     border-radius: 5px;
 }
-
+  
 /* Sidebar links */
 .sidebar a {
     display: block;
@@ -128,43 +83,24 @@ h1 {
     padding: 16px;
     text-decoration: none;
 }
-
+  
 /* Active/current link */
 .sidebar a.active {
-    background-color: #4caf50;
+    background-color: #4caf50; /* Vert doux */
     color: white;
 }
-
+  
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
-    color: #ffffff;
-    background: #4caf50;
+    color: white;
+    background: #4caf50; /* Vert doux */
 }
 
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+/* Page content */
 div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
-}
-
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: fixed;
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-}
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
 }
 
 /* Barre de recherche */
@@ -172,7 +108,7 @@ div.content {
     display: flex;
     justify-content: center;
     padding: 15px;
-    background-color: #8b5e3b;
+    background-color: #8b5e3b; /* Brun chaleureux */
     border-radius: 5px;
     width: 90vw;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -201,7 +137,7 @@ div.content {
 }
 
 input[type="submit"] {
-    background-color: #4caf50;
+    background-color: #4caf50; /* Vert doux */
     color: white;
     border: none;
     padding: 12px 20px;
@@ -210,10 +146,10 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #388e3c;
+    background-color: #388e3c; /* Vert foncé */
 }
 
-/* Compense la hauteur de la barre de recherche */
+/* Ajouter un produit */
 .add-product {
     display: flex;
     justify-content: center;
@@ -221,7 +157,7 @@ input[type="submit"]:hover {
 }
 
 .add-product-button {
-    background-color: #388e3c;
+    background-color: #2a5934; /* Vert sombre */
     color: white;
     padding: 12px 20px;
     font-size: 24px;
@@ -237,6 +173,6 @@ input[type="submit"]:hover {
 }
 
 .add-product-button:hover {
-    color: #388e3c;
-    background-color: white;
+    background-color: #1e3e24; /* Vert très sombre */
+    color: #2a5934; /* Vert sombre */
 }
