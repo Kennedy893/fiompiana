@@ -72,8 +72,8 @@
                         <td><?php echo $donnee->getPerteSansManger(); ?></td>
                         <td><?php echo $donnee->getConsoJrs(); ?></td>
                         <td class="card-buttons">
-                            <button class="button edit-button">Modifier</button>
-                            <button class="button delete-button">Supprimer</button>
+                            <a href=""><button class="button edit-button">Modifier</button></a>
+                            <a href=""><button class="button delete-button">Supprimer</button></a>
                         </td>
                     </tr>
                 <?php
@@ -107,8 +107,8 @@
                         <td><?php echo $donnee->getPrix_kg(); ?></td>
                         <td><?php echo $donnee->getGain(); ?></td>
                         <td class="card-buttons">
-                            <button class="button edit-button">Modifier</button>
-                            <button class="button delete-button">Supprimer</button>
+                            <a href=""><button class="button edit-button">Modifier</button></a>
+                            <a href=""><button class="button delete-button">Supprimer</button></a>
                             <!--<button class="button add-button">Ajouter</button>-->
                         </td>
                     </tr>
