@@ -23,7 +23,8 @@ class FrontOfficeController {
 
     public function faireAchat($id_animal, $id_eleveur)
     {
-        // $autovente = Flight::request()->query->autovente ? 1 : 0; // Convertir en booléen
+        // Vérifier si l'acheteur a coché l'autovente
+        $autovente = isset($_GET['autovente']) ? 1 : 0; 
 
         $animal = Flight::AnimauxModel()->getAnimalById($id_animal);
 
@@ -38,6 +39,8 @@ class FrontOfficeController {
         Flight::AnimauxModel()->setEleveur(1, $id_animal);
         Flight::AnimauxModel()->removeFromVente($id_animal);
         $updateCapital = Flight::AnimauxModel()->updateCapital($id_animal, $id_eleveur);
+        Flight::AnimauxModel()->updateAutoVente($id_animal, $autovente);
+
 
         $animaux = Flight::AnimauxModel()->getAnimauxAVendre(1);
         $result = ['animaux' => $animaux];

@@ -44,6 +44,7 @@ CREATE TABLE elevage_animal
     FOREIGN KEY (id_type) REFERENCES elevage_type_animal(id_type),
     FOREIGN KEY (id_eleveur) REFERENCES elevage_eleveur(id_eleveur)
 );
+ALTER TABLE elevage_animal ADD autovente BOOLEAN DEFAULT FALSE;
 
 CREATE TABLE elevage_stockage
 (
