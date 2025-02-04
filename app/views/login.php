@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
-    <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/login-style_h.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/login_style_h.css">
 </head>
 <body>
     
     <div class="login-container">
-        <form action="liste_crud.html" class="login-form">
+        <form action="liste_crud.html" method="post" class="login-form">
             <h2>Gestion d'Elevage</h2>
             <p>
                 <label for="nom">Nom d'utilisateur</label>

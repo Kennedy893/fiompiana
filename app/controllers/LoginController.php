@@ -3,7 +3,7 @@
     use app\models\User;
     use Flight;
 
-    class UserController
+    class LoginController
     {
         public function __construct()
         {
@@ -11,7 +11,7 @@
         }
         public function home()
         {
-            FLight::render('Login');
+            FLight::render('login');
         }
         public function login()
         {

@@ -3,15 +3,15 @@
 use app\controllers\FrontOfficeController;
 use app\controllers\ParametrageController;
 use app\controllers\ResetController;
+use app\controllers\LoginController;
 
 use flight\Engine;
 use flight\net\Router;
 //use Flight;
 
 
-$router->get('/', function () use ($router) {
-        Flight::render('accueil');
-    });
+$Login=new LoginController();
+$router->get('/', [ $Login, 'home' ]);
 
 $FrontOfficeController = new FrontOfficeController();
 
