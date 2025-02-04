@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-class Type_animal_H
+class HTypeanimal
 {
     private $id_type;
     private $alimentation;
@@ -46,7 +46,7 @@ class Type_animal_H
 
     public function setAlimentation($id_alimentation)
     {
-        $rep=Alimentation_H::get_by_id($id_alimentation);
+        $rep=HAlimentation::get_by_id($id_alimentation);
         $this->alimentation = $rep;
     }
 
@@ -123,10 +123,10 @@ class Type_animal_H
     // Méthodes pour récupérer les données de la base
     public static function get_all()
     {
-        $values = Request_backoffice::get_all("elevage_type_animal");
+        $values = RequestbackofficeH::get_all("elevage_type_animal");
         $retour = array();
         foreach ($values as $donnee) {
-            $rep = new ElevageTypeAnimal(
+            $rep = new HTypeanimal(
                 $donnee['id_type'],
                 $donnee['id_alimentation'],
                 $donnee['nom_type'],
@@ -144,20 +144,21 @@ class Type_animal_H
 
     public static function get_by_id($id)
     {
-        $values = Request_backoffice::get_by_nbr("elevage_type_animal", "id_type", $id);
-        $rep = new ElevageTypeAnimal(
-            $values[0]['id_type'],
-            $values[0]['id_alimentation'],
-            $values[0]['nom_type'],
-            $values[0]['poids_min'],
-            $values[0]['poids_max'],
-            $values[0]['prix_kg'],
-            $values[0]['nbr_jrs_dead'],
-            $values[0]['perte_sans_manger'],
-            $values[0]['conso_jrs']
+        $values = RequestbackofficeH::get_by_nbr("elevage_type_animal", "id_type", $id);
+        $rep = new HTypeanimal(
+            $values['id_type'],
+            $values['id_alimentation'],
+            $values['nom_type'],
+            $values['poids_min'],
+            $values['poids_max'],
+            $values['prix_kg'],
+            $values['nbr_jrs_dead'],
+            $values['perte_sans_manger'],
+            $values['conso_jrs']
         );
         return $rep;
     }
+
 }
 
 ?>
