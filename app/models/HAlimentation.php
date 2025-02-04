@@ -71,9 +71,9 @@
     
         public static function get_all()
         {
-            $values=RequestbackofficeH::get_all("eleve_alimentation");
+            $values=RequestbackofficeH::get_all("elevage_alimentation");
             $retour=array();
-            foreach($donnee as $values)
+            foreach($values as $donnee)
             {
                 $rep=new HAlimentation($donnee['id_alimentation'],$donnee['prix_kg'],$donnee['gain'],$donnee['nom_alimentation']);
                 $retour[]=$rep;
