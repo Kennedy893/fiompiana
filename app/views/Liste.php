@@ -1,13 +1,18 @@
 
 <?php
     $titre;
+    $link;
     if(isset($data['elevage_type_animal']))
     {
         $titre="Liste des animaux";
+        $link="<a class='active' href='".BASE_URL."type_animal'>Animaux</a>
+        <a href='".BASE_URL."type_alimentation'>Alimentation</a>";
     }
     if(isset($data['elevage_alimentation']))
     {
         $titre="Liste des alimentations";
+        $link="<a href='".BASE_URL."type_animal'>Animaux</a>
+        <a class='active' href='".BASE_URL."type_alimentation'>Alimentation</a>";
     }
 ?>
 <!DOCTYPE html>
@@ -26,10 +31,7 @@
         </form>
     </div>
     <div class="sidebar">
-        <a href="liste_crud.html">Produits</a>
-        <a class="active" href="liste_crud_table.html">Categories</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <?=$link ?>
     </div> 
     <div class="products-container">
         <h1><?=$titre ?></h1>
