@@ -86,6 +86,23 @@ class HEleveur
         return $retour;
     }
 
+    public static function get_verification($nom,$pass)
+    {
+        $valeur=Heleveur::get_all();
+        for($i=0 ; $i<Count($valeur) ; $i++)
+        {
+            if
+            (
+                $valeur[$i]->getNom()==$nom &&
+                $valeur[$i]-->getMotDePasse()==$pass
+            )
+            {
+                $retour=$valeur[$i];
+                return $retour;
+            }
+        }
+        return null;
+    }
     // Récupérer un éleveur par son ID
     public static function get_by_id($id)
     {

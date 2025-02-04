@@ -13,11 +13,11 @@
             <h2>Gestion d'Elevage</h2>
             <p>
                 <label for="nom">Nom d'utilisateur</label>
-                <input type="text" name="nom" id="nom" placeholder="Entrez votre nom" required >
+                <input type="text" name="nom" placeholder="Entrez votre nom" required >
             </p>
             <p>
                 <label for="pass">Mot de passe</label>
-                <input type="password" name="pass" id="pass" placeholder="Entrez votre mot de passe" required >
+                <input type="password" name="pass" placeholder="Entrez votre mot de passe" required >
             </p>
             <p>
                 <input type="submit" value="Se connecter" class="submit-button">

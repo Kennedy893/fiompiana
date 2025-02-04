@@ -15,6 +15,10 @@
         }
         public function login()
         {
+            $data = Flight::request()->data;
+            $nom=$data->pass;
+            $pass=$data->nom;
+
             
         }
     }
