@@ -32,7 +32,6 @@
                 $_SESSION['id_eleveur']=$id;
                 Flight::render('accueil');
             }
-
         }
     }
 ?>

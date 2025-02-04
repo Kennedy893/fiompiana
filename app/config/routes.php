@@ -6,6 +6,7 @@ use app\controllers\ResetController;
 use app\controllers\LoginController;
 use app\controllers\AlimentationController;
 use app\controllers\ArgentController;
+use app\controllers\HprevisionController;
 
 
 use flight\Engine;
@@ -55,4 +56,5 @@ $router->get('/type_alimentation/modif', [ $Param_Controller, 'redirect_modif_al
 $router->post('/type_alimentation/modif/confirm', [ $Param_Controller, 'update_alimentation' ]);
 
 
-
+$dash=new HprevisionController();
+$router->post('/dashboard', [ $dash, 'envoie' ]);

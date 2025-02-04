@@ -30,6 +30,17 @@ class RequestbackofficeH
         return $retour;
     }
 
+    public static function get_by_nbr_all($table_name,$colonne,$valeur)
+    {
+        $db=Flight::db();
+        $request="SELECT *";
+
+        $sql=$db->prepare($request." FROM ".$table_name." WHERE ".$colonne." = ?");
+        $sql->execute([$valeur]);
+        $retour=$sql->fetchAll(PDO::FETCH_ASSOC);
+        return $retour;
+    }
+
     public static function get_by_text($table_name,$colonne,$text)
     {
         $db=Flight::db();
