@@ -159,6 +159,23 @@ class HTypeanimal
         return $rep;
     }
 
+    public static function update($id,$newval)
+    {
+        $request="UPDATE elevage_type_animal SET id_alimentation=".
+        $newval->getAlimentation()->getIdAlimentation().
+        ", nom_type='".$newval->getNomType().
+        "', poids_min=".$newval->getPoidsMin().
+        ", poids_max=".$newval->getPoidsMax().
+        ", prix_kg=".$newval->getPrixKg().
+        ", nbr_jrs_dead=".$newval->getNbrJrsDead().
+        ", perte_sans_manger=".$newval->getPerteSansManger().
+        ", conso_jrs=".$newval->getConsoJrs().
+        ", WHERE id_type=".$id;
+
+        $db=Flight::db();
+        $sql=$db->prepare($request);
+        $sql->execute();
+    }
 }
 
 ?>

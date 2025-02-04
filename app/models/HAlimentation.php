@@ -88,6 +88,18 @@
 
             return $rep;
         }
+        public static function update($id,$newval)
+    {
+        $request="UPDATE elevage_alimentation SET prix_kg=".
+        $newval->getPrix_kg().
+        ", nom_alimentation='".$newval->getNom().
+        "', gain=".$newval->getGain().
+        ", WHERE id_alimentation=".$id;
+
+        $db=Flight::db();
+        $sql=$db->prepare($request);
+        $sql->execute();
+    }
 
     }
     

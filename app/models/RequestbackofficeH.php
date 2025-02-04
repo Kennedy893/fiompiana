@@ -78,6 +78,7 @@ class RequestbackofficeH
     }
 
     
+    
 
     public static function delete_by_nbr($table_name,$colonne,$valeur)
     {
