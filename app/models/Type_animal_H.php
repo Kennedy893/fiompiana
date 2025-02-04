@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-class ElevageTypeAnimal
+class Type_animal_H
 {
     private $id_type;
     private $alimentation;
