@@ -12,7 +12,6 @@
             <nav>
                 <a href="index.html" class="logo">Elevage</a>
                 <ul class="menu">
-                    <li><a href="/accueil/parametre-type">Parametre type animal</a></li>
                     <li><a href="<?= BASE_URL ?>accueil/achat-animaux">Achat animaux</a></li>
                     <li><a href="<?= BASE_URL ?>accueil/vente-animaux">Vente animaux</a></li>
                     <li><a href="<?= BASE_URL ?>accueil/achat-alimentation">Achat alimentation</a></li>
