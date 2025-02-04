@@ -18,6 +18,8 @@ $router->group('/accueil', function () use ($router, $FrontOfficeController) {
 
     $router->get('/achat-animaux', [$FrontOfficeController, 'listeAnimauxAVendre']);
 
+    $router->post('/acheter/@id_animal:[0-9]+/@id_eleveur:[0-9]+', [$FrontOfficeController, 'faireAchat']);
+
     $router->get('/vente-animaux', function () {
         Flight::redirect('vente-animaux');
     });
