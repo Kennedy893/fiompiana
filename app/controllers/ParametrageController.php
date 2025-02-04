@@ -38,5 +38,20 @@
 
             Flight::redirect(BASE_URL.'type_animal');
         }
+        public function redirect_modif_type_animal()
+        {
+            $id=Flight::request()->query['id'];
+            $valeur=HTypeanimal::get_by_id($id);
+            $data=['action'=>"elevage_type_animal",'valeur'=>$valeur];
+            Flight::render('Form_modif',$data);
+        }
+
+        public function redirect_modif_alimentation()
+        {
+            $id=Flight::request()->query['id'];
+            $valeur=HAlimentation::get_by_id($id);
+            $data=['action'=>"elevage_alimentation",'valeur'=>$valeur];
+            Flight::render('Form_modif',$data);
+        }
     }
 ?>

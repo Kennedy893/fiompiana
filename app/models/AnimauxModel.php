@@ -16,6 +16,8 @@ class AnimauxModel {
         $this->db = $db;
     }
 
+    // ACHETER ANIMAUX
+
 	public function getAnimauxAVendre($id_eleveur)
     {
         $stmt = $this->db->prepare("SELECT * FROM elevage_animal WHERE status_vente is TRUE AND id_eleveur != $id_eleveur");
@@ -73,5 +75,61 @@ class AnimauxModel {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function updateAutoVente($id_animal, $autovente)
+    {
+        $stmt = $this->db->prepare("UPDATE elevage_animal SET autovente = ? WHERE id_animal = ?");
+        $stmt->execute([$autovente, $id_animal]);
+    }
+
+
+
+    // VENDRE ANIMAUX
+
+    public function checkAutoVente($id_animal)
+    {
+        // Récupérer le poids actuel de l'animal et son poids minimal de vente
+        $stmt = $this->db->prepare("
+            SELECT a.poids_actuel, t.poids_min_vente, a.autovente
+            FROM elevage_animal a
+            JOIN elevage_type_animal t ON a.id_type = t.id_type
+            WHERE a.id_animal = ?
+        ");
+        $stmt->execute([$id_animal]);
+        $animal = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Vérifier si l'animal a activé l'autovente et a dépassé le poids minimal
+        if ($animal && $animal['autovente'] && $animal['poids_actuel'] >= $animal['poids_min_vente']) 
+        {
+            $this->vendreAnimal($id_animal); // Exécuter la vente automatique
+        }
+    }
+
+    public function updatePoidsAnimal($id_animal, $nouveau_poids)
+    {
+        $stmt = $this->db->prepare("UPDATE elevage_animal SET poids_actuel = ? WHERE id_animal = ?");
+        $stmt->execute([$nouveau_poids, $id_animal]);
+
+        // Vérifier si l'animal doit être vendu automatiquement
+        $this->checkAutoVente($id_animal);
+    }
+
+    // Vendre automatiquement l'animal
+    public function vendreAnimal($id_animal)
+    {
+        $stmt = $this->db->prepare("UPDATE elevage_animal SET status_vente = TRUE WHERE id_animal = ?");
+        $stmt->execute([$id_animal]);
+    }
+
+
+
+    // public function getAnimauxVendables($id_eleveur)
+    // {
+    //     $stmt = $this->db->prepare("SELECT * FROM elevage_animal WHERE status_vente is TRUE AND id_eleveur = $id_eleveur");
+    //     $stmt->execute();
+    //     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //     return $result;
+    // }
+
 
 }
