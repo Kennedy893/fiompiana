@@ -1,4 +1,20 @@
 
+<?php
+    $titre;
+    $link;
+    if(isset($data['elevage_type_animal']))
+    {
+        $titre="Liste des animaux";
+        $link="<a class='active' href='".BASE_URL."type_animal'>Animaux</a>
+        <a href='".BASE_URL."type_alimentation'>Alimentation</a>";
+    }
+    if(isset($data['elevage_alimentation']))
+    {
+        $titre="Liste des alimentations";
+        $link="<a href='".BASE_URL."type_animal'>Animaux</a>
+        <a class='active' href='".BASE_URL."type_alimentation'>Alimentation</a>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,50 +31,96 @@
         </form>
     </div>
     <div class="sidebar">
-        <a href="liste_crud.html">Produits</a>
-        <a class="active" href="liste_crud_table.html">Categories</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <?=$link ?>
     </div> 
     <div class="products-container">
-        <h1>Liste des Produits</h1>
+        <h1><?=$titre ?></h1>
         <table class="products-table">
-            <thead>
                 <?php
                 if(isset($data['elevage_type_animal']))
                 {
+                    
                 ?>
-
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>alimentation</th>
+                        <th>nom</th>
+                        <th>poids min (kg)</th>
+                        <th>poids max (kg)</th>
+                        <th>prix par kg</th>
+                        <th>resistance (jrs)</th>
+                        <th>perte de poids</th>
+                        <th>consommation quotidienne</th>
+                        <th>Actions</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                    foreach($data['elevage_type_animal'] as $donnee)
+                    {
+                ?>
+                    <tr>
+                        <td><?php echo $donnee->getIdType(); ?></td>
+                        <td><?php echo $donnee->getAlimentation()->getNom(); ?></td>
+                        <td><?php echo $donnee->getNomType(); ?></td>
+                        <td><?php echo $donnee->getPoidsMin(); ?></td>
+                        <td><?php echo $donnee->getPoidsMax(); ?></td>
+                        <td><?php echo $donnee->getPrixkg(); ?></td>
+                        <td><?php echo $donnee->getNbrJrsDead(); ?></td>
+                        <td><?php echo $donnee->getPerteSansManger(); ?></td>
+                        <td><?php echo $donnee->getConsoJrs(); ?></td>
+                        <td class="card-buttons">
+                            <a href=""><button class="button edit-button">Modifier</button></a>
+                            <a href="type_animal/delete?id=<?=$donnee->getIdType() ?>"><button class="button delete-button">Supprimer</button></a>
+                        </td>
+                    </tr>
+                <?php
+                    }
+                ?>
+                
+                </tbody>    
                 <?php
                 }
                 if(isset($data['elevage_alimentation']))
                 {
                 ?>
-                
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>nom</th>
+                        <th>prix/kg</th>
+                        <th>gain (%)</th>
+                        <th>Actions</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
                 <?php
+                    foreach($data['elevage_alimentation'] as $donnee)
+                    {
+                ?>
+                    <tr>
+                        <td><?php echo $donnee->getIdAlimentation(); ?></td>
+                        <td><?php echo $donnee->getNom(); ?></td>
+                        <td><?php echo $donnee->getPrix_kg(); ?></td>
+                        <td><?php echo $donnee->getGain(); ?></td>
+                        <td class="card-buttons">
+                            <a href=""><button class="button edit-button">Modifier</button></a>
+                            <a href=""><button class="button delete-button">Supprimer</button></a>
+                            <!--<button class="button add-button">Ajouter</button>-->
+                        </td>
+                    </tr>
+                <?php
+                    }
                 }
                 ?>
-                <tr>
-                    <th>Nom du produit</th>
-                    <th>Description</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Produit 1</td>
-                    <td>Description rapide de ce produit avec ses caractéristiques principales.</td>
-                    <td class="card-buttons">
-                        <button class="button edit-button">Modifier</button>
-                        <button class="button delete-button">Supprimer</button>
-                        <button class="button add-button">Ajouter</button>
-                    </td>
-                </tr>
                 
-            </tbody>
         </table>
 
         <!-- Pagination -->
+        <!--
         <div class="pagination">
             <a href="#" class="page-link">&laquo;</a>
             <a href="#" class="page-link active">1</a>
@@ -66,6 +128,7 @@
             <a href="#" class="page-link">3</a>
             <a href="#" class="page-link">&raquo;</a>
         </div>
+        -->
         <div class="add-product">
             <a href="formulaire.html"><button class="button add-product-button">+</button></a>
         </div>

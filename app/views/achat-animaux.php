@@ -12,10 +12,14 @@
     <div class="animal-container">
         <?php foreach ($animaux as $anim) { ?>
             <div class="animal-card">
-                <img src="<?= BASE_URL ?>public/assets/images/1.jpg" alt="Animal">
-                <h2><?= htmlspecialchars($anim['nom_animal']); ?></h2>
-                <p>Poids actuel: <strong><?= htmlspecialchars($anim['poids_initial']); ?> kg</strong></p>
-                <button class="buy-button">🛒 Acheter</button>
+                <form action="/accueil/acheter" method="post">
+                    <input type="hidden" name="id_eleveur" value="<?= $anim['id_eleveur']; ?>">
+                    <input type="hidden" name="id_animal" value="<?= $anim['id_animal']; ?>">
+                    <img src="<?= BASE_URL ?>public/assets/images/1.jpg" alt="Animal">
+                    <h2><?= htmlspecialchars($anim['nom_animal']); ?></h2>
+                    <p>Poids actuel: <strong><?= htmlspecialchars($anim['poids_initial']); ?> kg</strong></p>
+                    <button class="buy-button">🛒 Acheter</button>
+                </form>
             </div>
         <?php } ?>
     </div>

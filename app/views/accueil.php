@@ -17,7 +17,8 @@
                     <li><a href="<?= BASE_URL ?>accueil/vente-animaux">Vente animaux</a></li>
                     <li><a href="<?= BASE_URL ?>accueil/achat-alimentation">Achat alimentation</a></li>
                     <li><a href="<?= BASE_URL ?>accueil/prevision">Prevision</a></li>
-                    <li><a href="<?= BASE_URL ?>type_animal">Parametre type animal</a></li>
+                    <li><a href="<?= BASE_URL ?>type_animal">Parametrage type animal</a></li>
+                    <li><a href="<?= BASE_URL ?>type_alimentation">Parametrage alimentation</a></li>
                 </ul>
             </nav>
         </div>

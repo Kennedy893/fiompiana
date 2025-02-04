@@ -57,7 +57,7 @@ class RequestbackofficeH
         }
         $sql=$db->prepare($string_sql);
         $sql->execute();
-        $retour=$sql->fetch(PDO::FETCH_ASSOC);
+        $retour=$sql->fetchAll(PDO::FETCH_ASSOC);
         return $retour;
     }
 

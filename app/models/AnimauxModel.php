@@ -40,10 +40,29 @@ class AnimauxModel {
         return $result['prix_exact'];
     }
 
-    public function updateCapital($id_animal)
+    public function updateCapital($id_animal, $id_eleveur)
     {
         $prix = $this->getPrixExactAnimal($id_animal);
-        
+        $stmt = $this->db->prepare("UPDATE elevage_eleveur SET capital=capital-$prix WHERE id_eleveur = $id_eleveur");
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function getAnimalById ($id) 
+    {
+        $stmt = $this->db->prepare("SELECT * FROM elevege_animal WHERE id_animal = ?");
+        $stmt->execute([$id]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function getEleveurById ($id) 
+    {
+        $stmt = $this->db->prepare("SELECT * FROM elevege_animal WHERE id_eleveur = ?");
+        $stmt->execute([$id]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 
 }

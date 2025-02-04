@@ -41,7 +41,7 @@ class HTypeanimal
 
     public function getAlimentation()
     {
-        return $this->id_alimentation;
+        return $this->alimentation;
     }
 
     public function setAlimentation($id_alimentation)
