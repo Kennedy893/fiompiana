@@ -24,7 +24,7 @@
     {
 ?>
     <h1>Formulaire de modification animal</h1>
-        <form action="" method="post" class="form">
+        <form action="<?=BASE_URL ?>type_animal/modif/confirm?id=<?=$data['valeur']->getIdType() ?>" method="post" class="form">
             <div class="form-group">
                 <label>Alimentation</label>
                 <select name="alimentation" required>
@@ -77,7 +77,7 @@
 ?>
 <h1>Formulaire de modification alimentations</h1>
 
-        <form action="" method="post" class="form">
+        <form action="<?=BASE_URL ?>type_alimentation/modif/confirm?id=<?=$data['valeur']->getIdAlimentation() ?>" method="post" class="form">
             <div class="form-group">
                 <label>nom </label>
                 <input type="text" name="nom" value="<?=$data['valeur']->getNom() ?>" required>
